@@ -180,7 +180,7 @@ fun result(line: String) {
     }
 }
 
-fun PrintEmptyGrid(){
+fun PrintEmptyGrid() {
     println("---------")
     println("| " + " " + " " + " " + " " + " " + " |")
     println("| " + " " + " " + " " + " " + " " + " |")
@@ -219,13 +219,13 @@ fun AppendGrid(line: String) {
                     println("This cell is occupied! Choose another one!")
                     AppendGrid(line)
                 } else {
-                    if(isXPlayer) {
+                    if (isXPlayer) {
                         isXPlayer = false
                         lines[0] = char
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     } else {
@@ -234,7 +234,7 @@ fun AppendGrid(line: String) {
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     }
@@ -244,13 +244,13 @@ fun AppendGrid(line: String) {
                     println("This cell is occupied! Choose another one!")
                     AppendGrid(line)
                 } else {
-                    if(isXPlayer) {
+                    if (isXPlayer) {
                         isXPlayer = false
                         lines[1] = char
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     } else {
@@ -259,7 +259,7 @@ fun AppendGrid(line: String) {
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     }
@@ -269,13 +269,13 @@ fun AppendGrid(line: String) {
                     println("This cell is occupied! Choose another one!")
                     AppendGrid(line)
                 } else {
-                    if(isXPlayer) {
+                    if (isXPlayer) {
                         isXPlayer = false
                         lines[2] = char
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     } else {
@@ -284,7 +284,7 @@ fun AppendGrid(line: String) {
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     }
@@ -294,13 +294,13 @@ fun AppendGrid(line: String) {
                     println("This cell is occupied! Choose another one!")
                     AppendGrid(line)
                 } else {
-                    if(isXPlayer) {
+                    if (isXPlayer) {
                         isXPlayer = false
                         lines[3] = char
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     } else {
@@ -309,7 +309,7 @@ fun AppendGrid(line: String) {
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     }
@@ -319,13 +319,13 @@ fun AppendGrid(line: String) {
                     println("This cell is occupied! Choose another one!")
                     AppendGrid(line)
                 } else {
-                    if(isXPlayer) {
+                    if (isXPlayer) {
                         isXPlayer = false
                         lines[4] = char
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     } else {
@@ -334,7 +334,7 @@ fun AppendGrid(line: String) {
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     }
@@ -344,13 +344,13 @@ fun AppendGrid(line: String) {
                     println("This cell is occupied! Choose another one!")
                     AppendGrid(line)
                 } else {
-                    if(isXPlayer) {
+                    if (isXPlayer) {
                         isXPlayer = false
                         lines[5] = char
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     } else {
@@ -359,7 +359,7 @@ fun AppendGrid(line: String) {
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     }
@@ -369,13 +369,13 @@ fun AppendGrid(line: String) {
                     println("This cell is occupied! Choose another one!")
                     AppendGrid(line)
                 } else {
-                    if(isXPlayer) {
+                    if (isXPlayer) {
                         isXPlayer = false
                         lines[6] = char
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     } else {
@@ -384,7 +384,7 @@ fun AppendGrid(line: String) {
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     }
@@ -394,13 +394,13 @@ fun AppendGrid(line: String) {
                     println("This cell is occupied! Choose another one!")
                     AppendGrid(line)
                 } else {
-                    if(isXPlayer) {
+                    if (isXPlayer) {
                         isXPlayer = false
                         lines[7] = char
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     } else {
@@ -409,7 +409,7 @@ fun AppendGrid(line: String) {
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     }
@@ -419,13 +419,13 @@ fun AppendGrid(line: String) {
                     println("This cell is occupied! Choose another one!")
                     AppendGrid(line)
                 } else {
-                    if(isXPlayer) {
+                    if (isXPlayer) {
                         isXPlayer = false
                         lines[8] = char
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     } else {
@@ -434,7 +434,7 @@ fun AppendGrid(line: String) {
                         val line2 = String(lines)
                         PrintGrid(line2)
                         result(line2)
-                        if(!gameEnded) {
+                        if (!gameEnded) {
                             AppendGrid(line2)
                         }
                     }

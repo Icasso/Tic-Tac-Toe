@@ -14,12 +14,15 @@ enum FieldState {
 
     static FieldState get(char symbol) {
         switch (symbol) {
-            case 'X': return X;
-            case 'O': return O;
+            case 'X':
+                return X;
+            case 'O':
+                return O;
             case ' ':
             case '_':
                 return FREE;
-            default: return null;
+            default:
+                return null;
         }
     }
 }
@@ -66,8 +69,7 @@ class TicTacToeField {
                 if (field[i][j] != other.field[i][j]) {
                     if (field[i][j] == FieldState.FREE && !improved) {
                         improved = true;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                 }
@@ -78,8 +80,8 @@ class TicTacToeField {
 
     boolean isCloseTo(TicTacToeField other) {
         return equalTo(other)
-            || hasNextAs(other)
-            || other.hasNextAs(this);
+                || hasNextAs(other)
+                || other.hasNextAs(this);
     }
 
     boolean isWinning(FieldState side) {
@@ -88,50 +90,50 @@ class TicTacToeField {
         }
 
         if (get(1, 1) == side &&
-            get(1, 2) == side &&
-            get(1, 3) == side) {
+                get(1, 2) == side &&
+                get(1, 3) == side) {
             return true;
         }
 
         if (get(2, 1) == side &&
-            get(2, 2) == side &&
-            get(2, 3) == side) {
+                get(2, 2) == side &&
+                get(2, 3) == side) {
             return true;
         }
 
         if (get(3, 1) == side &&
-            get(3, 2) == side &&
-            get(3, 3) == side) {
+                get(3, 2) == side &&
+                get(3, 3) == side) {
             return true;
         }
 
         if (get(1, 1) == side &&
-            get(2, 1) == side &&
-            get(3, 1) == side) {
+                get(2, 1) == side &&
+                get(3, 1) == side) {
             return true;
         }
 
         if (get(1, 2) == side &&
-            get(2, 2) == side &&
-            get(3, 2) == side) {
+                get(2, 2) == side &&
+                get(3, 2) == side) {
             return true;
         }
 
         if (get(1, 3) == side &&
-            get(2, 3) == side &&
-            get(3, 3) == side) {
+                get(2, 3) == side &&
+                get(3, 3) == side) {
             return true;
         }
 
         if (get(1, 1) == side &&
-            get(2, 2) == side &&
-            get(3, 3) == side) {
+                get(2, 2) == side &&
+                get(3, 3) == side) {
             return true;
         }
 
         if (get(1, 3) == side &&
-            get(2, 2) == side &&
-            get(3, 1) == side) {
+                get(2, 2) == side &&
+                get(3, 1) == side) {
             return true;
         }
 
@@ -156,25 +158,25 @@ class TicTacToeField {
 
         try {
             List<String> lines = fieldStr
-                .lines()
-                .map(String::strip)
-                .filter(e ->
-                    e.startsWith("|")
-                        && e.endsWith("|"))
-                .collect(Collectors.toList());
+                    .lines()
+                    .map(String::strip)
+                    .filter(e ->
+                            e.startsWith("|")
+                                    && e.endsWith("|"))
+                    .collect(Collectors.toList());
 
             for (String line : lines) {
                 if (line.length() != 9) {
                     throw new WrongAnswer("Line of Tic-Tac-Toe " +
-                        "field should be 9 characters long\n" +
-                        "found " + line.length() + " characters in \"" + line + "\"");
+                            "field should be 9 characters long\n" +
+                            "found " + line.length() + " characters in \"" + line + "\"");
                 }
                 for (char c : line.toCharArray()) {
                     if (c != 'X'
-                        && c != 'O'
-                        && c != '|'
-                        && c != ' '
-                        && c != '_') {
+                            && c != 'O'
+                            && c != '|'
+                            && c != ' '
+                            && c != '_') {
                         return null;
                     }
                 }
@@ -184,10 +186,10 @@ class TicTacToeField {
 
             int y = 0;
             for (String line : lines) {
-                char[] cols = new char[] {
-                    line.charAt(2),
-                    line.charAt(4),
-                    line.charAt(6)
+                char[] cols = new char[]{
+                        line.charAt(2),
+                        line.charAt(4),
+                        line.charAt(6)
                 };
 
                 int x = 0;
@@ -213,10 +215,10 @@ class TicTacToeField {
         List<TicTacToeField> fields = new ArrayList<>();
 
         List<String> lines = output
-            .lines()
-            .map(String::strip)
-            .filter(e -> e.length() > 0)
-            .collect(Collectors.toList());
+                .lines()
+                .map(String::strip)
+                .filter(e -> e.length() > 0)
+                .collect(Collectors.toList());
 
         String candidateField = "";
         boolean insideField = false;
@@ -245,6 +247,7 @@ class TicTacToeField {
 
 class Clue {
     int x, y;
+
     Clue(int x, int y) {
         this.x = x;
         this.y = y;
@@ -256,10 +259,10 @@ public class TicTacToeTest extends StageTest<Clue> {
         super(MainKt.class);
     }
 
-    static String[] inputs = new String[] {
-        "1 1", "1 2", "1 3",
-        "2 1", "2 2", "2 3",
-        "3 1", "3 2", "3 3"
+    static String[] inputs = new String[]{
+            "1 1", "1 2", "1 3",
+            "2 1", "2 2", "2 3",
+            "3 1", "3 2", "3 3"
     };
 
     String iterateCells(String initial) {
@@ -297,7 +300,7 @@ public class TicTacToeTest extends StageTest<Clue> {
             }
 
             String fullMoveInput = randomInput
-                + iterateCells(input) + iterateCells(input);
+                    + iterateCells(input) + iterateCells(input);
 
             String[] strNums = input.split(" ");
             int x = Integer.parseInt(strNums[0]);
@@ -314,8 +317,8 @@ public class TicTacToeTest extends StageTest<Clue> {
             }
 
             tests.add(new TestCase<Clue>()
-                .setInput(fullGameInput)
-                .setAttach(new Clue(x, y)));
+                    .setInput(fullGameInput)
+                    .setAttach(new Clue(x, y)));
 
             i++;
         }
@@ -338,83 +341,83 @@ public class TicTacToeTest extends StageTest<Clue> {
 
             if (!(curr.equalTo(next) || curr.hasNextAs(next))) {
                 return new CheckResult(false,
-                    "For two fields following each " +
-                        "other one is not a continuation " +
-                        "of the other (they differ more than in two places).");
+                        "For two fields following each " +
+                                "other one is not a continuation " +
+                                "of the other (they differ more than in two places).");
             }
         }
 
         List<String> lines = reply
-            .strip()
-            .lines()
-            .map(String::strip)
-            .filter(e -> e.length() > 0)
-            .collect(Collectors.toList());
+                .strip()
+                .lines()
+                .map(String::strip)
+                .filter(e -> e.length() > 0)
+                .collect(Collectors.toList());
 
         String lastLine = lines.get(lines.size() - 1);
 
-        if (! (lastLine.contains("X wins")
-            || lastLine.contains("O wins")
-            || lastLine.contains("Draw")
+        if (!(lastLine.contains("X wins")
+                || lastLine.contains("O wins")
+                || lastLine.contains("Draw")
         )) {
             return new CheckResult(false,
-                "Can't parse final result, " +
-                    "should contain \"Draw\", \"X wins\" or \"O wins\".\n" +
-                    "Your last line: \"" + lastLine + "\"");
+                    "Can't parse final result, " +
+                            "should contain \"Draw\", \"X wins\" or \"O wins\".\n" +
+                            "Your last line: \"" + lastLine + "\"");
         }
 
         if (lastLine.contains("X wins") && lastLine.contains("O wins")) {
             return new CheckResult(false,
-                "Your final result contains \"X wins\" and \"O wins\" " +
-                    "at the same time. This is impossible.\n" +
-                    "Your last line: \"" + lastLine + "\"");
+                    "Your final result contains \"X wins\" and \"O wins\" " +
+                            "at the same time. This is impossible.\n" +
+                            "Your last line: \"" + lastLine + "\"");
         }
 
         if (lastLine.contains("X wins") && lastLine.contains("Draw")) {
             return new CheckResult(false,
-                "Your final result contains \"X wins\" and \"Draw\" " +
-                    "at the same time. This is impossible.\n" +
-                    "Your last line: \"" + lastLine + "\"");
+                    "Your final result contains \"X wins\" and \"Draw\" " +
+                            "at the same time. This is impossible.\n" +
+                            "Your last line: \"" + lastLine + "\"");
         }
 
         if (lastLine.contains("O wins") && lastLine.contains("Draw")) {
             return new CheckResult(false,
-                "Your final result contains \"O wins\" and \"Draw\" " +
-                    "at the same time. This is impossible.\n" +
-                    "Your last line: \"" + lastLine + "\"");
+                    "Your final result contains \"O wins\" and \"Draw\" " +
+                            "at the same time. This is impossible.\n" +
+                            "Your last line: \"" + lastLine + "\"");
         }
 
         TicTacToeField lastField = fields.get(fields.size() - 1);
 
         if (lastField.isWinning(FieldState.X) && !lastLine.contains("X wins")) {
             return new CheckResult(false,
-                "Your last field shows that X wins, " +
-                    "and your last line should contain \"X wins\".\n" +
-                    "Your last line: \"" + lastLine + "\"");
+                    "Your last field shows that X wins, " +
+                            "and your last line should contain \"X wins\".\n" +
+                            "Your last line: \"" + lastLine + "\"");
         }
 
         if (lastField.isWinning(FieldState.O) && !lastLine.contains("O wins")) {
             return new CheckResult(false,
-                "Your last field shows that O wins, " +
-                    "and your last line should contain \"O wins\".\n" +
-                    "Your last line: \"" + lastLine + "\"");
+                    "Your last field shows that O wins, " +
+                            "and your last line should contain \"O wins\".\n" +
+                            "Your last line: \"" + lastLine + "\"");
         }
 
         if (lastField.isDraw() && !lastLine.contains("Draw")) {
             return new CheckResult(false,
-                "Your last field shows that there is a draw, " +
-                    "and your last line should contain \"Draw\".\n" +
-                    "Your last line: \"" + lastLine + "\"");
+                    "Your last field shows that there is a draw, " +
+                            "and your last line should contain \"Draw\".\n" +
+                            "Your last line: \"" + lastLine + "\"");
         }
 
         if (lastField.isWinning(FieldState.X) ||
-            lastField.isWinning(FieldState.O) ||
-            lastField.isDraw()) {
+                lastField.isWinning(FieldState.O) ||
+                lastField.isDraw()) {
             return CheckResult.correct();
         }
 
         return CheckResult.wrong(
-            "Your last field contains unfinished game, the game should be finished!"
+                "Your last field contains unfinished game, the game should be finished!"
         );
     }
 }
